@@ -1,5 +1,6 @@
 import { Mail, MapPin, Phone, Share2 } from "lucide-react";
 import { Link } from "react-router";
+import { Logo } from "~/components/brand/Logo";
 import { CONTACT, NAV_LINKS, SITE } from "~/constants/site";
 import { SERVICES } from "~/data/content";
 
@@ -9,9 +10,7 @@ export function Footer() {
       <div className="container-luxury section-padding pb-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link to="/" className="font-display text-2xl font-semibold">
-              {SITE.name}
-            </Link>
+            <Logo variant="footer" withBackground />
             <p className="mt-4 text-sm leading-relaxed text-white/75">
               Modern kitchen and interior solutions crafted with precision, quality, and style.
             </p>

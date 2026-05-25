@@ -9,6 +9,8 @@ import {
 
 import type { Route } from "./+types/root";
 import { MainLayout } from "~/components/layout/MainLayout";
+import { Logo } from "~/components/brand/Logo";
+import { LOGO_PUBLIC_PATH } from "~/constants/brand";
 import { SITE } from "~/constants/site";
 import "./app.css";
 
@@ -23,7 +25,8 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap",
   },
-  { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+  { rel: "icon", href: LOGO_PUBLIC_PATH, type: "image/png" },
+  { rel: "apple-touch-icon", href: LOGO_PUBLIC_PATH },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -72,7 +75,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
     <MainLayout>
       <section className="flex min-h-[70vh] items-center justify-center section-padding">
         <div className="container-luxury text-center">
-          <p className="font-display text-6xl text-primary/30">{is404 ? "404" : "Error"}</p>
+          <Logo variant="hero" linkToHome className="mx-auto" withBackground />
+          <p className="font-display mt-8 text-6xl text-primary/30">{is404 ? "404" : "Error"}</p>
           <h1 className="font-display mt-4 text-3xl text-text">{message}</h1>
           <p className="mt-4 text-muted">{details}</p>
           <a

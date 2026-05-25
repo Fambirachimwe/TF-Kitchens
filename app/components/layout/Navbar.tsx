@@ -1,8 +1,9 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
+import { Logo } from "~/components/brand/Logo";
 import { Button } from "~/components/ui/Button";
-import { NAV_LINKS, SITE } from "~/constants/site";
+import { NAV_LINKS } from "~/constants/site";
 import { cn } from "~/utils/cn";
 import { MobileMenu } from "./MobileMenu";
 
@@ -50,15 +51,10 @@ export function Navbar() {
             )}
             aria-label="Main navigation"
           >
-            <Link
-              to="/"
-              className={cn(
-                "font-display text-lg font-semibold tracking-tight md:text-xl",
-                showSolid ? "text-primary" : "text-white",
-              )}
-            >
-              {SITE.name}
-            </Link>
+            <Logo
+              variant="navbar"
+              withBackground={showSolid}
+            />
 
             <ul className="hidden items-center gap-8 lg:flex">
               {NAV_LINKS.map((link) => (

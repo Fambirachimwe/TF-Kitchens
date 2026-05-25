@@ -1,3 +1,4 @@
+import { Logo } from "~/components/brand/Logo";
 import { AnimateOnScroll } from "~/components/common/AnimateOnScroll";
 import { TRUST_ITEMS } from "~/data/content";
 
@@ -5,7 +6,8 @@ export function TrustStrip() {
   return (
     <section className="border-b border-border bg-white py-8">
       <div className="container-luxury">
-        <AnimateOnScroll className="text-center">
+        <AnimateOnScroll className="flex flex-col items-center text-center">
+          <Logo variant="compact" linkToHome={false} withBackground className="mb-4" />
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             Trusted Interior & Kitchen Design Specialists
           </p>

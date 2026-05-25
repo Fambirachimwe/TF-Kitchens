@@ -1,5 +1,6 @@
 import type { Route } from "./+types/not-found";
 import { Home } from "lucide-react";
+import { Logo } from "~/components/brand/Logo";
 import { Button } from "~/components/ui/Button";
 import { buildMeta } from "~/utils/seo";
 
@@ -14,7 +15,8 @@ export default function NotFound() {
   return (
     <section className="flex min-h-[80vh] items-center justify-center bg-light section-padding">
       <div className="container-luxury text-center">
-        <p className="font-display text-8xl text-primary/20 md:text-9xl">404</p>
+        <Logo variant="hero" linkToHome className="mx-auto" withBackground />
+        <p className="font-display mt-8 text-8xl text-primary/20 md:text-9xl">404</p>
         <h1 className="font-display mt-4 text-3xl text-text md:text-4xl">
           Page Not Found
         </h1>

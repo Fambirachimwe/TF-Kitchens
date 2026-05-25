@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { Link } from "react-router";
+import { Logo } from "~/components/brand/Logo";
 import { Button } from "~/components/ui/Button";
 import { NAV_LINKS } from "~/constants/site";
 
@@ -21,7 +22,8 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           transition={{ duration: 0.3 }}
         >
           <div className="flex h-full flex-col px-6 py-8">
-            <div className="flex justify-end">
+            <div className="flex items-center justify-between">
+              <Logo variant="mobile" withBackground />
               <button
                 type="button"
                 onClick={onClose}
@@ -31,7 +33,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 <X className="h-7 w-7" />
               </button>
             </div>
-            <nav className="mt-12 flex flex-1 flex-col gap-6" aria-label="Mobile navigation">
+            <nav className="mt-10 flex flex-1 flex-col gap-6" aria-label="Mobile navigation">
               {NAV_LINKS.map((link, i) => (
                 <motion.div
                   key={link.to}
