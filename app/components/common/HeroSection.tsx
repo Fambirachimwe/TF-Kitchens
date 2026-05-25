@@ -1,5 +1,4 @@
 import { ChevronDown } from "lucide-react";
-import { Logo } from "~/components/brand/Logo";
 import { Button } from "~/components/ui/Button";
 import { LazyImage } from "./LazyImage";
 
@@ -28,7 +27,9 @@ export function HeroSection({
       />
       <div className="overlay-dark absolute inset-0" aria-hidden />
       <div className="container-luxury relative z-10 flex min-h-screen flex-col items-center justify-center py-32 text-center text-white">
-        <Logo variant="hero" linkToHome={false} className="mx-auto mb-6" />
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-white/80">
+          TF Kitchen Design
+        </p>
         <h1 className="font-display max-w-4xl text-4xl leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
           {title}
         </h1>
