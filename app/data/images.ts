@@ -1,6 +1,6 @@
 /** Premium interior imagery — replace with client assets when available */
 export const IMAGES = {
-  hero: "https://images.unsplash.com/photo-1556912173-46c7d2f9dfb8?w=1920&q=80",
+  hero: "https://images.unsplash.com/photo-1632583824020-937ae9564495?q=80&w=958&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   aboutMain: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
   aboutSecondary: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80",
   aboutHero: "https://images.unsplash.com/photo-1618221195710-e06b1b2f5a2a?w=1920&q=80",
