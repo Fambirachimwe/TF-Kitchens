@@ -1,4 +1,3 @@
-import { Logo } from "~/components/brand/Logo";
 import { LazyImage } from "./LazyImage";
 
 interface PageBannerProps {
@@ -6,16 +5,9 @@ interface PageBannerProps {
   subtitle?: string;
   image: string;
   breadcrumb?: string;
-  showLogo?: boolean;
 }
 
-export function PageBanner({
-  title,
-  subtitle,
-  image,
-  breadcrumb,
-  showLogo = true,
-}: PageBannerProps) {
+export function PageBanner({ title, subtitle, image, breadcrumb }: PageBannerProps) {
   return (
     <section className="relative flex min-h-[45vh] items-center justify-center overflow-hidden md:min-h-[50vh]">
       <LazyImage
@@ -26,9 +18,6 @@ export function PageBanner({
       />
       <div className="overlay-dark absolute inset-0" aria-hidden />
       <div className="container-luxury relative z-10 py-24 text-center text-white">
-        {showLogo && (
-          <Logo variant="hero" linkToHome className="mx-auto mb-6" withBackground />
-        )}
         {breadcrumb && (
           <p className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-white/70">
             Home / {breadcrumb}
