@@ -75,10 +75,10 @@ export default function Contact() {
                   <div>
                     <p className="text-sm font-semibold text-text">Email</p>
                     <a
-                      href="mailto:info@tfkitchendesign.co.za"
+                      href="mailto:info@tfdesignsza.co.za"
                       className="mt-1 block text-sm text-muted hover:text-accent"
                     >
-                      info@tfkitchendesign.co.za
+                      info@tfdesignsza.co.za
                     </a>
                   </div>
                 </li>

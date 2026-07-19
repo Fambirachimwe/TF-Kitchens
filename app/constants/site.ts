@@ -1,8 +1,8 @@
 export const SITE = {
   name: "TF Kitchen Design",
   tagline: "Luxury Interior Solutions Crafted With Precision",
-  url: "https://tfkitchendesign.co.za",
-  email: "info@tfkitchendesign.co.za",
+  url: "https://tfdesignsza.co.za",
+  email: "info@tfdesignsza.co.za",
 } as const;
 
 export const CONTACT = {
