@@ -6,7 +6,7 @@ export const SITE = {
 } as const;
 
 export const CONTACT = {
-  address: "18 Belarus Street, Ext 7, Cosmo City, Randburg, 2188",
+  address: "48 Seychelles Av, Cosmo City, Randburg, 2188",
   phones: ["+27 65 552 9045", "+27 71 760 4562"],
   whatsapp: "+27655529045",
   whatsappDisplay: "+27 65 552 9045",
