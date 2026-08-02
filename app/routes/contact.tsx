@@ -7,6 +7,8 @@ import { CONTACT, getWhatsAppUrl } from "~/constants/site";
 import { IMAGES } from "~/data/images";
 import { buildMeta } from "~/utils/seo";
 
+
+
 export function meta({}: Route.MetaArgs) {
   return buildMeta({
     title: "Contact TF Kitchen Design | Request a Quote",

@@ -21,6 +21,9 @@ interface ContactFormProps {
 
 export function ContactForm({ className }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [error, setError] = useState('')
+
+  //  formcarry submit function
 
   const {
     register,
@@ -31,11 +34,50 @@ export function ContactForm({ className }: ContactFormProps) {
 
   const onSubmit = async (_data: ContactFormData) => {
     setStatus("loading");
-    await new Promise((r) => setTimeout(r, 1200));
-    setStatus("success");
-    reset();
-    setTimeout(() => setStatus("idle"), 5000);
-  };
+    // await new Promise((r) => setTimeout(r, 1200));
+
+    // here send a message to the info email  . 
+    await fetch("https://formcarry.com/s/FABzCxEEQsY", {
+      method: 'POST',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        fullname: _data.fullName,
+        email: _data.email,
+        phone: _data.phone,
+        service: _data.service,
+        location: _data.location,
+        description: _data.description,
+        budget: _data.budget,
+        contactMethod: _data.contactMethod
+      })
+    })
+      .then(response => response.json())
+      .then(response => {
+        if (response.code === 200) {
+          alert("We received your submission, thank you!");
+          //  end of function 
+          setStatus("success");
+          reset();
+          setTimeout(() => setStatus("idle"), 5000);
+        }
+        else if (response.code === 422) {
+          // Field validation failed
+          setError(response.message)
+        }
+        else {
+          // other error from formcarry
+          setError(response.message)
+        }
+      })
+      .catch(error => {
+        // request related error.
+        setError(error.message ? error.message : error);
+      });
+  }
+
 
   const inputClass =
     "w-full rounded-2xl border border-border bg-white px-4 py-3.5 text-text transition-colors placeholder:text-muted/60 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20";
