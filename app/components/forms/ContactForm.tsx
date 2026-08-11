@@ -37,7 +37,7 @@ export function ContactForm({ className }: ContactFormProps) {
     // await new Promise((r) => setTimeout(r, 1200));
 
     // here send a message to the info email  . 
-    await fetch("https://tfdesigns-email-service.vercel.app/api/contact", {  // email service url
+    await fetch("https://email-service-express.vercel.app/api", {  // email service url
       method: 'POST',
       headers: {
         "Accept": "application/json",
