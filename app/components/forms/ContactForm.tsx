@@ -56,14 +56,16 @@ export function ContactForm({ className }: ContactFormProps) {
     })
       .then(response => response.json())
       .then(response => {
-        if (response.code === 200 || response.code === 201) {
+
+        console.log(response);
+        if (response.success == true ) {
           alert("We received your submission, thank you!");
           //  end of function 
           setStatus("success");
           reset();
           setTimeout(() => setStatus("idle"), 5000);
         }
-        else if (response.code === 422) {
+        else if (response.success ===  false) {
           // Field validation failed
           setError(response.message)
         }
