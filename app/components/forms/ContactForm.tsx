@@ -56,7 +56,7 @@ export function ContactForm({ className }: ContactFormProps) {
     })
       .then(response => response.json())
       .then(response => {
-        if (response.code === 200) {
+        if (response.code === 200 || response.code === 201) {
           alert("We received your submission, thank you!");
           //  end of function 
           setStatus("success");
